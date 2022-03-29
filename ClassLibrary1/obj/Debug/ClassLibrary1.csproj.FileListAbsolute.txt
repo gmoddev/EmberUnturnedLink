@@ -1,0 +1,15 @@
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.AssemblyReference.cache
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\Assembly-CSharp.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\Rocket.API.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\Rocket.Core.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\Rocket.Unturned.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\Steamworks.NET.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\bin\Debug\UnityEngine.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CopyComplete
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\aiden\Desktop\EmberUnturnedLink\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
