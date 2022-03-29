@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -40,6 +42,20 @@ namespace ModerationSystem
 			var SQLUser = Main.Instance.Configuration.Instance.SQLUser;
 			var SQLPassword = Main.Instance.Configuration.Instance.SQLPassword;
 			var SQLDatabase = Main.Instance.Configuration.Instance.SQLDatabase;
+
+			string connetionString;
+			SqlConnection cnn;
+			connetionString = @"Data Source=" + SQLHost + ";Initial Catalog=" + SQLDatabase + ";User ID=" + SQLUser + ";Password=" + SQLPassword;
+            cnn = new SqlConnection(connetionString);
+			cnn.Open();
+
+			string query = "INSERT INTO bans (id, scope, server_id, offender_user_id, created,  expires, reason, admin_user_id) VALUES (1, global, " + offenderSteamid + "," + System.DateTime.Now.ToLongDateString() + ", " + expiryMinutes + "," + reason + ", " + AdminSteamId+ ")";
+
+			SqlCommand myCommand = new SqlCommand(query, cnn);
+
+			myCommand.ExecuteNonQuery();
+
+			cnn.Close();
 		}
 	}
 }

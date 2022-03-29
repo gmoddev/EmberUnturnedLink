@@ -12,6 +12,7 @@ using Steamworks;
 using UnityEngine;
 using Logger = Rocket.Core.Logging.Logger;
 using System;
+using System.Collections.Generic;
 
 namespace ModerationSystem
 {
@@ -31,25 +32,58 @@ namespace ModerationSystem
         public override TranslationList DefaultTranslations => new TranslationList()
         {
             { "Invalid-Player-Name", "!color=yellow¡Invalid Player Name!/color¡" },
-            { "Correct-Kick-Usage", "!color=yellow¡Kick command correct usage: /kick (player) (reason)!/color¡" },
-            { "Kick-Success1", "!color=blue¡Successfully kicked:!/color¡" },
             { "Reason", "!color=blue¡reason:!/color¡" },
             { "For", "!color=blue¡for:!/color¡" },
             { "Correct-Ban-Usage", "!color=yellow¡Ban command correct usage: /ban (player) (reason) (time)!/color¡" },
             { "Ban-Success1", "!color=blue¡Successfully banned:!/color>" },
             { "Invalid-Ban-Format", "!color=yellow¡Invalid Player Name or time!/color¡" },
         };
-        
-        public void eban(IRocketPlayer caller, string[] command)
-        {
-            var player = (UnturnedPlayer)caller;
-            Logger.Log(command[1]);
-            Logger.Log(command[0]);
-            Logger.Log(command[2]);
-        }
+
         protected override void Unload()
         {
             Instance = null;
+        }
+    }
+
+    public class Command : IRocketCommand
+    {
+        public AllowedCaller AllowedCaller => AllowedCaller.Player;
+        public string Name => "eban";
+        public string Help => "Bans player via ember";
+        public string Syntax => "nothing || <player>/all";
+        public List<string> Aliases => new List<string>();
+        public List<string> Permissions => new List<string> { "ember.ban" };
+
+        public void Execute(IRocketPlayer caller, string[] args)
+        {
+            UnturnedPlayer player = (UnturnedPlayer)caller;
+            var main = ModerationSystem.Main.Instance;
+            var config = main.Configuration.Instance;
+
+
+            if (UnturnedPlayer.FromName(args[1]) != null) {
+
+                if (args[2] != null) {
+
+                    if (args[3] != null) {
+                        Functions.SendToSite(caller.Id, args[1], args[2], args[3]);
+
+                        else {
+                            Functions.SendToSite(caller.Id, args[1], args[2], "");
+                        };
+                    }
+                    else {
+                        Functions.SendToSite(caller.Id, args[1], "0", "");
+                    };
+                };
+
+
+
+                else {
+                    UnturnedChat.Say(caller, "Unable to find player");
+
+                };
+            };
         }
     }
 }

@@ -38,10 +38,7 @@
       <HintPath>..\..\dlls\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="com.rlabrecque.steamworks.net">
-      <HintPath>..\..\dlls\com.rlabrecque.steamworks.net.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\dlls\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\dlls\com.rlabrecque.steamworks.net.dll</HintPath>
     </Reference>
     <Reference Include="Rocket.API">
       <HintPath>..\..\dlls\Rocket.API.dll</HintPath>
@@ -75,6 +72,9 @@
     <Compile Include="Config.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
