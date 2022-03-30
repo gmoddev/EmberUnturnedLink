@@ -54,7 +54,7 @@ namespace ModerationSystem
         public List<string> Aliases => new List<string>();
         public List<string> Permissions => new List<string> { "ember.ban" };
 
-        public void Execute(IRocketPlayer caller, string[] args)
+        public void Execute(IRocketPlayer caller, string[] args, void v)
         {
             UnturnedPlayer player = (UnturnedPlayer)caller;
             var main = ModerationSystem.Main.Instance;
@@ -66,24 +66,23 @@ namespace ModerationSystem
                 if (args[2] != null) {
 
                     if (args[3] != null) {
-                        Functions.SendToSite(caller.Id, args[1], args[2], args[3]);
+                        Functions.SendToSite(caller.Id, args[1], args[2], args[3]); 
 
                         else {
                             Functions.SendToSite(caller.Id, args[1], args[2], "");
-                        };
+                        }
                     }
                     else {
                         Functions.SendToSite(caller.Id, args[1], "0", "");
-                    };
-                };
-
+                    }
+                }
 
 
                 else {
                     UnturnedChat.Say(caller, "Unable to find player");
 
-                };
-            };
+                }
+            }
         }
     }
 }
