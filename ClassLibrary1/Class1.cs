@@ -19,9 +19,6 @@ namespace ModerationSystem
     public class Main : RocketPlugin<Config>
     {
         public static Main Instance;
-        
-        [RocketCommand("eban", "Ban command", "", AllowedCaller.Player)]
-        [RocketCommandPermission("ember.ban")]
 
         protected override void Load()
         {
